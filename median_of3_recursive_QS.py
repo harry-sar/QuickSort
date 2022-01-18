@@ -25,9 +25,25 @@ def partition(dataArray,lowPoint,highPoint):
                                                                                 # referencing new list therefore list dosent have to be
     return highPoint                                                            # returned
 
-if __name__ == "__main__":
-    dataArray=[7,9,10,4,1,3,0,2,6,5,8]
+def validation(data_array):
+    check=None
+    for x in data_array:
+        if type(x) not in [type(0),type(0.0)]:
+            check=False
+    if check==False:
+        return []
+    else:
+        return data_array
+
+def run_sort(dataArray):
     lowPoint=0 #starting index
     highPoint=len(dataArray)-1 # last index
-    quickSort(dataArray,lowPoint,highPoint)
-    print(dataArray)
+    dataArray = validation(dataArray)
+    if dataArray!=[]:
+        quickSort(dataArray, lowPoint, highPoint)
+        print(dataArray)
+    else:
+        print("Invalid Array Data")
+
+if __name__ == "__main__":
+    run_sort([7, 9, 10,4, 1, 3, 0, 2, 6, 5, 8])
