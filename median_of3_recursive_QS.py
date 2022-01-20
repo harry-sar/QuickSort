@@ -1,3 +1,4 @@
+import time, random
 
 def quickSort(dataArray,lowPoint,highPoint):
     '''Quick Sort implementation using Medium of three & recursion'''
@@ -46,4 +47,10 @@ def run_sort(dataArray):
         print("Invalid Array Data")
 
 if __name__ == "__main__":
-    run_sort([7, 9, 10,4, 1, 3, 0, 2, 6, 5, 8])
+    # [7, 9, 10, 4, 1, 3, 0, 2, 6, 5, 8, ]
+    list_random=[random.randint(1,10000000) for x in range(1000)]
+    st = time.time()
+    run_sort(list_random)
+    print(f"Time Taken is {'{:f}'.format(time.time()-st)} Seconds!")
+
+
